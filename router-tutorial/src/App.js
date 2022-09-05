@@ -1,43 +1,30 @@
-import React from "react";
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
-import Profiles from "./Profiles";
-import HistorySample from "./HistorySample";
+import Profile from './Profile';
+import Article from "./Article";
+import Articles from "./Articles";
+import Layout from "./Layout";
+import NotFound from "./NotFound";
+import Login from "./Login";
+import MyPage from "./MyPage";
 
 const App = () => {
-  return (
-      <div>
-          <ul>
-              <li>
-                  <Link to="/">홈</Link>
-              </li>
-              <li>
-                  <Link to="/about">소개</Link>
-              </li>
-              <li>
-                  <Link to="/profiles">프로필</Link>
-              </li>
-              <li>
-                  <Link to="/history">History 예제</Link>
-              </li>
-          </ul>
-          <hr />
-
-          <Routes>
-              <Route path="/" element={<Home />} />
-              {["/about", "/info"].map(path => (
-                  <Route
-                    key = "About"
-                    path={path}
-                    element={<About />}
-                  />
-              ))}
-              <Route path="/profiles/*" element={<Profiles />} />
-              <Route path="/history" element={<HistorySample />} />
-          </Routes>
-      </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/profiles/:username" element={<Profile />} />
+            </Route>
+            <Route path="/articles" element={<Articles />}>
+                <Route path=":id" element={<Article />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/mypage" element={<MyPage />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    );
 };
 
 export default App;
