@@ -1,0 +1,6 @@
+{
+  "name": "vanilla-redux",
+  "dependencies": {
+    "redux": "^4.2.0"
+  }
+}

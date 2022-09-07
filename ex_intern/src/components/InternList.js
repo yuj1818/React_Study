@@ -1,35 +1,44 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import InternMember from "./InternMember";
 import axios from 'axios';
-import usePromise from "../lib/usePromise";
+
+axios.defaults.withCredentials = true;
 
 const InternList = () => {
-    const [loading, response, error] = usePromise(() => {
-        return axios.get(
-            `/osd_intern_board`
-        );
-    }, []);
+    const [info, setInfo] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-    if(loading) {
-        return <div>대기 중...</div>
+    useEffect(() => {
+        const fetchData = async() => {
+            setLoading(true);
+            try{
+                const response = await axios.get(
+                    '/osd_intern_board'
+                );
+                setInfo(response.data['data'])
+            } catch(err) {
+                console.log(err)
+            }
+            setLoading(false);
+        }
+        fetchData();
+    },[])
+
+    if(loading){
+        return <div>대기중...</div>;
     }
 
-    if(!response) {
+    if(!info){
         return null;
     }
 
-    if(error) {
-        return <div>에러 발생!</div>
-    }
-
-    const {info} = response.data;
-    return (
+    return(
         <div>
-            {info.map(inf => (
-                <InternMember key={inf.intern_number} inf={inf}/>
+            {info.map((inf) => (
+                <InternMember key={inf.intern_number} inf={inf} />
             ))}
         </div>
     );
-};
+}
 
 export default InternList;
