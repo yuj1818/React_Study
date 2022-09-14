@@ -6,15 +6,33 @@ import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import rootReducer from "./modules";
+import rootReducer, { rootSaga } from "./modules";
+import createSagaMiddleware from 'redux-saga';
+import { loadableReady } from '@loadable/component';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+    rootReducer,
+    window.__PRELOADED_STATE__,
+    applyMiddleware(thunk, sagaMiddleware)
+);
+
+sagaMiddleware.run(rootSaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>
-);
+
+async function render() {
+    if (process.env.NODE_ENV === 'production') {
+        await loadableReady();
+    }
+    root.render(
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    );
+}
+
+render();
