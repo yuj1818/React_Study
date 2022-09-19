@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import { Link } from 'react-router-dom';
-import TagBox from '../write/TagBox';
+// import TagBox from '../write/TagBox';
 
 const TagsBlock = styled.div`
   margin-top: 0.5rem;

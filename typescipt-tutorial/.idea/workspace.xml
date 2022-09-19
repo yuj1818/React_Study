@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ef55373-6812-41c1-b45a-beb4e496f1b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/common/AskModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/post/AskRemoveModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/post/PostActionButtons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/posts/Pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/posts/PaginationContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/posts/PostListContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/modules/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-backend/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/node_modules/esm/node_modules/.cache/esm/.data.blob" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/node_modules/esm/node_modules/.cache/esm/.data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/src/api/posts/posts.ctrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-backend/src/api/posts/posts.ctrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-backend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-backend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-backend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/common/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/common/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/common/Tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/common/Tags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/post/PostViewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/post/PostViewer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/posts/PostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/write/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/write/Editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/components/write/WriteActionButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/components/write/WriteActionButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/post/PostViewerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/post/PostViewerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/write/WriteActionButtonsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/containers/write/WriteActionButtonsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/lib/api/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/lib/api/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/lib/createRequestSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/lib/createRequestSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/modules/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/modules/write.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/modules/write.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/pages/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/pages/PostListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/src/pages/WritePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/src/pages/WritePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/blog-frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog-frontend/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Eyo4FPElum7lT49Xq3O7QZULWF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/OSD/WebstormProjects/typescript-tutorial",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef55373-6812-41c1-b45a-beb4e496f1b2" name="Changes" comment="" />
+      <created>1663576992857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663576992857</updated>
+      <workItem from="1663576994150" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
