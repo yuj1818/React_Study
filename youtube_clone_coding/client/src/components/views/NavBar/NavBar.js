@@ -1,8 +1,8 @@
+import { AlignRightOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
 import { Drawer, Button } from 'antd';
-import Icon from '@ant-design/icons';
 import './Sections/Navbar.css';
 
 function NavBar() {
@@ -26,14 +26,14 @@ function NavBar() {
                     <LeftMenu mode="horizontal" />
                 </div>
                 <div className="menu_right">
-                    <RightMenu mode="horizontal" />
+                    <RightMenu mode="horizontal inline" />
                 </div>
                 <Button
                     className="menu__mobile-button"
                     type="primary"
                     onClick={showDrawer}
                 >
-                    <Icon type="align-right" />
+                    <AlignRightOutlined />
                 </Button>
                 <Drawer
                     title="Basic Drawer"

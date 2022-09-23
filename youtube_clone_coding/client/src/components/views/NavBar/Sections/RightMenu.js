@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function RightMenu(props) {
     const navigate = useNavigate();
+
     const user = useSelector(state => state.user)
 
     const logoutHandler = () => {
@@ -34,6 +35,9 @@ function RightMenu(props) {
     } else {
         return (
             <Menu mode={props.mode}>
+                <Menu.Item key="upload">
+                    <a href="/video/upload">Video</a>
+                </Menu.Item>
                 <Menu.Item key="logout">
                     <a onClick={logoutHandler}>Logout</a>
                 </Menu.Item>
