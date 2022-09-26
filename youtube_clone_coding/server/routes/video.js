@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Video } = require("../models/Video");
+const { Subscriber } = require("../models/Subscriber");
 
 const { auth } = require("../middleware/auth");
 const multer = require("multer");
@@ -57,7 +58,26 @@ router.get('/getVideos', (req, res) => {
         .populate('writer') //User의 모든 정보를 가져오기위해 populate 사용
         .exec((err, videos) => {
             if(err) return res.status(400).send(err)
-            res.status(200).json({ success:true, videos })
+            return res.status(200).json({ success:true, videos })
+        })
+})
+
+router.get('/getSubscriptionVideos', (req, res) => {
+    //자신의 id로 구독 중인 유저들을 찾는다
+    Subscriber.find({ userFrom: req.query.userFrom })
+        .exec((err, subscriberInfo) => {
+            if(err) return res.status(400).send(err)
+            let subscribedUser = [];
+            subscriberInfo.map((subscriber, i) => {
+                subscribedUser.push(subscriber.userTo);
+            })
+            //찾은 유저들의 비디오를 가지고 온다
+            Video.find({ writer : { $in: subscribedUser }})
+                .populate('writer')
+                .exec((err, videos) => {
+                    if(err) return res.status(400).send(err)
+                    return res.status(200).json({ success:true, videos })
+                })
         })
 })
 

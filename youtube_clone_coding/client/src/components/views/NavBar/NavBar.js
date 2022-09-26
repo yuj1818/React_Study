@@ -23,7 +23,7 @@ function NavBar() {
             </div>
             <div className="menu__container">
                 <div className="menu_left">
-                    <LeftMenu mode="horizontal" />
+                    <LeftMenu mode="horizontal inline" />
                 </div>
                 <div className="menu_right">
                     <RightMenu mode="horizontal inline" />

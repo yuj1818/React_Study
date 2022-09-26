@@ -25,10 +25,10 @@ function LandingPage() {
             })
     }, []);
 
-
     const renderCards = Video.map((video, index) => {
         let minutes = Math.floor(video.duration/60);
         let seconds = Math.floor((video.duration - minutes*60));
+
 
         return (
             <Col lg={6} md={8} xs={24}>
