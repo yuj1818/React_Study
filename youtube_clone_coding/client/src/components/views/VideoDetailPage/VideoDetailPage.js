@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import SideVideo from "./Sections/SideVideo";
 import Subscribe from "./Sections/Subscribe";
 import Comment from "./Sections/Comment";
+import LikeDislikes from "./Sections/LikeDislikes";
 
 function VideoDetailPage() {
 
@@ -49,10 +50,10 @@ function VideoDetailPage() {
             <Row gutter={[16,16]}>
                 <Col lg={18} xs={24}>
                     <div style={{ width:'100%', padding:'3rem 4rem' }}>
-                        <video style={{ width:'100%' }} src={`http://localhost:5000/${VideoDetail.filePath}`} controls></video>
+                        <video style={{ width:'100%'}} src={`http://localhost:5000/${VideoDetail.filePath}`} controls></video>
 
                         <List.Item
-                            actions={[ subscribeButton ]}
+                            actions={[ <LikeDislikes video userTo={VideoDetail.writer._id} userId={localStorage.getItem('userId')} videoId={videoId}/> ,subscribeButton ]}
                         >
                             <List.Item.Meta
                                 avatar={<Avatar src={VideoDetail.writer && VideoDetail.writer.image} />}

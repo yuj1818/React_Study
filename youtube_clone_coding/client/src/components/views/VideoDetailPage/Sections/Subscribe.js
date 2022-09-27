@@ -38,6 +38,10 @@ function Subscribe(props) {
         }
 
         if (isUser){
+            // //본인의 게시물인 경우
+            // if (props.userTo === localStorage.getItem('userId')) {
+            //     return alert('본인은 구독할 수 없습니다.')
+            // }
             //이미 구독 중이라면
             if (Subscribed) {
                 axios.post('/api/subscribe/unSubscribe', subscribedVariable)
