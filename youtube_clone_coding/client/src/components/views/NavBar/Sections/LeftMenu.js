@@ -5,7 +5,7 @@ const MenuItemGroup = Menu.ItemGroup;
 
 function LeftMenu(props) {
     return (
-        <Menu mode="horizontal">
+        <Menu mode={props.mode}>
             <Menu.Item key="mail">
                 <a href="/">Home</a>
             </Menu.Item>

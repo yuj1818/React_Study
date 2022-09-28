@@ -135,4 +135,12 @@ router.post('/thumbnail', (req, res) => {
         })
 })
 
+router.post('/upView', (req, res) => {
+    Video.findByIdAndUpdate({ _id:req.body.videoId }, { views:req.body.views })
+        .exec((err, result) => {
+            if(err) return res.status(400).json({ success:false, err})
+            res.status(200).json({ success:true })
+        })
+})
+
 module.exports = router;

@@ -48,6 +48,7 @@
 
 .menu__container .menu_right {
     float: right;
+    width: 17%;
     padding: 25px 0;
 }
 

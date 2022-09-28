@@ -66,7 +66,7 @@ function VideoDetailPage() {
                     </div>
                 </Col>
                 <Col lg={6} xs={24}>
-                    <SideVideo />
+                    <SideVideo videoId={videoId}/>
                 </Col>
             </Row>
         )

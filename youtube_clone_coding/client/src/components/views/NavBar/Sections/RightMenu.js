@@ -24,7 +24,7 @@ function RightMenu(props) {
 
     if (user.userData && !user.userData.isAuth) {
         return (
-            <Menu mode="horizontal">
+            <Menu mode={props.mode}>
                 <Menu.Item key="mail">
                     <a href="/login">Sign in</a>
                 </Menu.Item>

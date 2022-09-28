@@ -24,10 +24,10 @@ function NavBar() {
             </div>
             <div className="menu__container">
                 <div className="menu_left">
-                    <LeftMenu />
+                    <LeftMenu mode="horizontal" />
                 </div>
                 <div className="menu_right">
-                    <RightMenu />
+                    <RightMenu mode="horizontal" />
                 </div>
                 <Button
                     className="menu__mobile-button"
