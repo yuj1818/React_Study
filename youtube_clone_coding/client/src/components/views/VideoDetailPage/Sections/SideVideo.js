@@ -23,25 +23,51 @@ function SideVideo(props) {
         let minutes = Math.floor(video.duration/60);
         let seconds = Math.floor((video.duration - minutes*60));
 
-        if(video._id !== props.videoId) {
-            return (
-                <div key={index} style={{ display:'flex', marginBottom:'1rem', padding:'0 2rem'}}>
-                    <div style={{ width:'40%', marginRight:'1rem'}}>
-                        <a href={`/video/${video._id}`} >
-                            <img style={{ width:'100%', height:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
-                        </a>
-                    </div>
+        const userId = localStorage.getItem('userId')
 
-                    <div style={{ width:'50%'}}>
-                        <a href style={{ color:'gray' }}>
-                            <span style={{ fontSize:'1rem', color:'black'}}>{video.title}</span><br />
-                            <span>{video.writer.name}</span><br />
-                            <span>{video.views}</span><br />
-                            <span>{minutes} : {seconds}</span>
-                        </a>
+        if(video._id !== props.videoId) {
+            if(video.privacy === 0) {
+                if(video.writer._id === userId) {
+                    return (
+                        <div key={index} style={{ display:'flex', marginBottom:'1rem', padding:'0 2rem'}}>
+                            <div style={{ width:'40%', marginRight:'1rem'}}>
+                                <a href={`/video/${video._id}`} >
+                                    <img style={{ width:'100%', height:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
+                                </a>
+                            </div>
+
+                            <div style={{ width:'50%'}}>
+                                <a href style={{ color:'gray' }}>
+                                    <span style={{ fontSize:'1rem', color:'black'}}>{video.title}</span><br />
+                                    <span>{video.writer.name}</span><br />
+                                    <span>{video.views}</span><br />
+                                    <span>{minutes} : {seconds}</span>
+                                </a>
+                            </div>
+                        </div>
+                    )
+                }
+            } else {
+                return (
+                    <div key={index} style={{ display:'flex', marginBottom:'1rem', padding:'0 2rem'}}>
+                        <div style={{ width:'40%', marginRight:'1rem'}}>
+                            <a href={`/video/${video._id}`} >
+                                <img style={{ width:'100%', height:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
+                            </a>
+                        </div>
+
+                        <div style={{ width:'50%'}}>
+                            <a href style={{ color:'gray' }}>
+                                <span style={{ fontSize:'1rem', color:'black'}}>{video.title}</span><br />
+                                <span>{video.writer.name}</span><br />
+                                <span>{video.views}</span><br />
+                                <span>{minutes} : {seconds}</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            }
+
         }
     })
 

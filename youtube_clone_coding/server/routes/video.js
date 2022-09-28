@@ -62,6 +62,46 @@ router.get('/getVideos', (req, res) => {
         })
 })
 
+router.get('/getFaAVideos', (req, res) => {
+    //비디오를 DB에서 get 하여 클라이언트에 전송
+    Video.find({category: "0"})
+        .populate('writer') //User의 모든 정보를 가져오기위해 populate 사용
+        .exec((err, videos) => {
+            if(err) return res.status(400).send(err)
+            return res.status(200).json({ success:true, videos })
+        })
+})
+
+router.get('/getAaVVideos', (req, res) => {
+    //비디오를 DB에서 get 하여 클라이언트에 전송
+    Video.find({category: "1"})
+        .populate('writer') //User의 모든 정보를 가져오기위해 populate 사용
+        .exec((err, videos) => {
+            if(err) return res.status(400).send(err)
+            return res.status(200).json({ success:true, videos })
+        })
+})
+
+router.get('/getMusicVideos', (req, res) => {
+    //비디오를 DB에서 get 하여 클라이언트에 전송
+    Video.find({category: "2"})
+        .populate('writer') //User의 모든 정보를 가져오기위해 populate 사용
+        .exec((err, videos) => {
+            if(err) return res.status(400).send(err)
+            return res.status(200).json({ success:true, videos })
+        })
+})
+
+router.get('/getPaAVideos', (req, res) => {
+    //비디오를 DB에서 get 하여 클라이언트에 전송
+    Video.find({category: "3"})
+        .populate('writer') //User의 모든 정보를 가져오기위해 populate 사용
+        .exec((err, videos) => {
+            if(err) return res.status(400).send(err)
+            return res.status(200).json({ success:true, videos })
+        })
+})
+
 router.get('/getSubscriptionVideos', (req, res) => {
     //자신의 id로 구독 중인 유저들을 찾는다
     Subscriber.find({ userFrom: req.query.userFrom })

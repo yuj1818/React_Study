@@ -9,6 +9,10 @@ import Footer from "./views/Footer/Footer";
 import VideoUploadPage from "./views/VideoUploadPage/VideoUploadPage";
 import VideoDetailPage from "./views/VideoDetailPage/VideoDetailPage";
 import SubscriptionPage from "./views/SubscriptionPage/SubscriptionPage";
+import FilmAndAnimationPage from "./views/CategoryPage/FilmAndAnimationPage";
+import AutosAndVehiclesPage from "./views/CategoryPage/AutosAndVehiclesPage";
+import MusicPage from "./views/CategoryPage/MusicPage";
+import PetsAndAnimalsPage from "./views/CategoryPage/PetsAndAnimalsPage";
 
 function App() {
   const AuthLandingPage = Auth(LandingPage, null);
@@ -17,6 +21,10 @@ function App() {
   const AuthVideoUploadPage = Auth(VideoUploadPage, true);
   const AuthVideoDetailPage = Auth(VideoDetailPage, null);
   const AuthSubscriptionPage = Auth(SubscriptionPage, true);
+  const AuthFilmAndAnimationPage = Auth(FilmAndAnimationPage, null);
+  const AuthAutosAndVehiclesPage = Auth(AutosAndVehiclesPage, null);
+  const AuthMusicPage = Auth(MusicPage, null);
+  const AuthPetsAndAnimalsPage = Auth(PetsAndAnimalsPage, null);
 
   return (
       <Suspense fallback={(<div>Loading...</div>)}>
@@ -29,6 +37,10 @@ function App() {
                   <Route path="/video/upload" element={<AuthVideoUploadPage />} />
                   <Route path="/video/:videoId" element={<AuthVideoDetailPage />} />
                   <Route path="/subscription" element={<AuthSubscriptionPage />} />
+                  <Route path="/category/film_and_animation" element={<AuthFilmAndAnimationPage />} />
+                  <Route path="/category/autos_and_vehicles" element={<AuthAutosAndVehiclesPage />} />
+                  <Route path="/category/music" element={<AuthMusicPage />} />
+                  <Route path="/category/pets_and_animals" element={<AuthPetsAndAnimalsPage />} />
               </Routes>
           </div>
           <Footer />

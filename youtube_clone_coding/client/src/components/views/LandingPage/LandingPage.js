@@ -27,6 +27,9 @@ function LandingPage() {
     }, []);
 
     const renderCards = Video.map((video, index) => {
+
+        const userId = localStorage.getItem('userId')
+
         let minutes = Math.floor(video.duration/60);
         let seconds = Math.floor((video.duration - minutes*60));
 
@@ -36,8 +39,7 @@ function LandingPage() {
         }
 
         const onViewUp = () => {
-            console.log('조회수 올리기')
-            if(video.writer._id !== localStorage.getItem('userId')) {
+            if(video.writer._id !== userId) {
                 axios.post('/api/video/upView', variable)
                     .then(response => {
                         if (response.data.success) {
@@ -50,29 +52,57 @@ function LandingPage() {
             navigate(`/video/${video._id}`)
         }
 
-        return (
-            <Col lg={6} md={8} xs={24}>
-                <div style={{ position:'relative' }}>
-                    <a onClick={onViewUp}>
-                        <img style={{ width:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
-                        <div className="duration">
-                            <span>{minutes} : {seconds}</span>
+        if(video.privacy === 0) {
+            if(video.writer._id === userId) {
+                return (
+                    <Col lg={6} md={8} xs={24}>
+                        <div style={{ position:'relative' }}>
+                            <a onClick={onViewUp}>
+                                <img style={{ width:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
+                                <div className="duration">
+                                    <span>{minutes} : {seconds}</span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <br />
-                <Meta
-                    avatar={
-                        <Avatar src={video.writer.image} />
-                    }
-                    title={video.title}
-                    description=""
-                />
-                <span style={{ marginLeft:'3rem' }}>{video.writer.name} </span><br />
-                <span style={{ marginLeft:'3rem' }}>{video.views} views</span> - <span>{moment(video.createdAt).format("MMM Do YY")}</span>
-            </Col>
-        )}
-    )
+                        <br />
+                        <Meta
+                            avatar={
+                                <Avatar src={video.writer.image} />
+                            }
+                            title={video.title}
+                            description=""
+                        />
+                        <span style={{ marginLeft:'3rem' }}>{video.writer.name} </span><br />
+                        <span style={{ marginLeft:'3rem' }}>{video.views} views</span> - <span>{moment(video.createdAt).format("MMM Do YY")}</span>
+                    </Col>
+                )
+            }
+        } else {
+            return (
+                <Col lg={6} md={8} xs={24}>
+                    <div style={{ position:'relative' }}>
+                        <a onClick={onViewUp}>
+                            <img style={{ width:'100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thumbnail" />
+                            <div className="duration">
+                                <span>{minutes} : {seconds}</span>
+                            </div>
+                        </a>
+                    </div>
+                    <br />
+                    <Meta
+                        avatar={
+                            <Avatar src={video.writer.image} />
+                        }
+                        title={video.title}
+                        description=""
+                    />
+                    <span style={{ marginLeft:'3rem' }}>{video.writer.name} </span><br />
+                    <span style={{ marginLeft:'3rem' }}>{video.views} views</span> - <span>{moment(video.createdAt).format("MMM Do YY")}</span>
+                </Col>
+            )
+        }
+
+    })
 
     return (
         <div style={{ width:'85%', margin:'3rem auto'}}>
