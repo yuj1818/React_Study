@@ -996,20 +996,18 @@ var render = function render() {
 };
 
 render();
-store.subscribe(render);
+store.subscribe(render); //onClick 사용했으나 작동이 되지 않아, 이유를 못 찾고 addEventListener로 변경
 
-divToggle.onclick = function () {
+divToggle.addEventListener('click', function () {
   store.dispatch(toggleSwitch());
-};
-
-btnIncrease.onclick = function () {
+});
+btnIncrease.addEventListener('click', function () {
   store.dispatch(increase(1));
-};
-
-btnDecrease.onclick = function () {
+});
+btnDecrease.addEventListener('click', function () {
   store.dispatch(decrease());
-};
-},{"redux":"node_modules/redux/es/redux.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+});
+},{"redux":"node_modules/redux/es/redux.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1037,7 +1035,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51376" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -1213,5 +1211,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/vanilla-redux.e31bb0bc.js.map

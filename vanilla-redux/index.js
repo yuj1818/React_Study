@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import { createStore } from "redux";
 
 const divToggle = document.querySelector('.toggle');
 const counter = document.querySelector('h1');
@@ -10,8 +10,8 @@ const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
 const toggleSwitch = () => ({ type: TOGGLE_SWITCH });
-const increase = difference => ({ type: INCREASE, difference});
-const decrease = () => ({ type: DECREASE});
+const increase = difference => ({ type: INCREASE, difference });
+const decrease = () => ({ type: DECREASE });
 
 const initialState = {
     toggle: false,
@@ -33,7 +33,7 @@ function reducer(state = initialState, action) {
         case DECREASE:
             return {
                 ...state,
-                counter: state.counter -1
+                counter: state.counter - 1
             };
         default:
             return state;
@@ -57,12 +57,15 @@ const render = () => {
 render();
 store.subscribe(render);
 
-divToggle.onclick = () => {
+//onClick 사용했으나 작동이 되지 않아, 이유를 못 찾고 addEventListener로 변경
+divToggle.addEventListener('click', () => {
     store.dispatch(toggleSwitch());
-};
-btnIncrease.onclick = () => {
+});
+
+btnIncrease.addEventListener('click', () => {
     store.dispatch(increase(1));
-};
-btnDecrease.onclick = () => {
+});
+
+btnDecrease.addEventListener('click', () => {
     store.dispatch(decrease());
-};
+});
