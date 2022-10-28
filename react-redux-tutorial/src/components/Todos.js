@@ -1,4 +1,4 @@
-const TodoItem = ({todo, onToggle, onRemove}) => {
+const TodoItem = ({ todo, onToggle, onRemove }) => {
     return (
         <div>
             <input
@@ -7,7 +7,7 @@ const TodoItem = ({todo, onToggle, onRemove}) => {
                 checked={todo.done}
                 readOnly={true}
             />
-            <span style={{textDecoration: todo.done ? 'line-through' : 'none'}}>
+            <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
                 {todo.text}
             </span>
             <button onClick={() => onRemove(todo.id)}>삭제</button>
@@ -28,11 +28,13 @@ const Todos = ({
         onInsert(input);
         onChangeInput('');
     };
+
     const onChange = e => onChangeInput(e.target.value);
+
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <input value={input} onChange={onChange}/>
+                <input value={input} onChange={onChange} />
                 <button type="submit">등록</button>
             </form>
             <div>

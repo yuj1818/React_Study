@@ -1,4 +1,4 @@
-const Counter = ({ onIncrease, onDecrease, number}) => {
+const Counter = ({onIncrease, onDecrease, number}) => {
     return (
         <div>
             <h1>{number}</h1>
